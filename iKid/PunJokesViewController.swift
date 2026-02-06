@@ -18,8 +18,10 @@ class PunJokesViewController: UIViewController {
     var currentJokeIndex = 0
     var isShowingQuestion = true
     
+    
     let jokeLabel = UILabel()
     let nextButton = UIButton(type: .system)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
