@@ -91,14 +91,28 @@ class ImageJokesViewController: UIViewController {
         let joke = imageJokes[currentJokeIndex]
         
         if isShowingQuestion {
-            // Show question and corresponding image
+            // Show question
             jokeLabel.text = joke.0
             
-            // In a real app, you would load actual images
-            // For now, we'll use system images or colored placeholders
-            let imageNames = ["hare.fill", "tortoise.fill", "ant.fill"]
-            if currentJokeIndex < imageNames.count {
-                jokeImageView.image = UIImage(systemName: imageNames[currentJokeIndex])
+            // Load image from Assets.xcassets based on joke index
+            switch currentJokeIndex {
+            case 0:
+                // First joke - chicken joke
+                jokeImageView.image = UIImage(named: "chicken_image")
+            case 1:
+                // Second joke - bull joke
+                jokeImageView.image = UIImage(named: "bull_image")
+            case 2:
+                // Third joke - skeleton joke
+                jokeImageView.image = UIImage(named: "skeleton_image")
+            default:
+                jokeImageView.image = UIImage(systemName: "questionmark.circle")
+            }
+            
+            // If you don't have custom images, use system images as fallback
+            if jokeImageView.image == nil {
+                let fallbackImages = ["hare.fill", "tortoise.fill", "ant.fill"]
+                jokeImageView.image = UIImage(systemName: fallbackImages[currentJokeIndex])
                 jokeImageView.tintColor = .systemBlue
             }
             
@@ -107,10 +121,23 @@ class ImageJokesViewController: UIViewController {
             // Show answer
             jokeLabel.text = joke.1
             
-            // Change image for answer (optional)
-            let answerImageNames = ["lightbulb.fill", "brain.head.profile", "face.smiling"]
-            if currentJokeIndex < answerImageNames.count {
-                jokeImageView.image = UIImage(systemName: answerImageNames[currentJokeIndex])
+            // You can show different images for answers
+            switch currentJokeIndex {
+            case 0:
+                // Chicken joke answer
+                jokeImageView.image = UIImage(named: "chicken_answer_image") ?? UIImage(systemName: "lightbulb.fill")
+            case 1:
+                // Bull joke answer
+                jokeImageView.image = UIImage(named: "bull_answer_image") ?? UIImage(systemName: "brain.head.profile")
+            case 2:
+                // Skeleton joke answer
+                jokeImageView.image = UIImage(named: "skeleton_answer_image") ?? UIImage(systemName: "face.smiling")
+            default:
+                jokeImageView.image = UIImage(systemName: "exclamationmark.circle")
+            }
+            
+            // Set tint color for system images
+            if jokeImageView.image?.isSymbolImage == true {
                 jokeImageView.tintColor = .systemGreen
             }
             

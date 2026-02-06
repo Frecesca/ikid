@@ -64,16 +64,17 @@
             </objects>
             <point key="canvasLocation" x="-2575" y="-1141"/>
         </scene>
-        <!--View Controller-->
+        <!--Images-->
         <scene sceneID="OJP-On-Rn1">
             <objects>
-                <viewController id="frb-PO-Z7O" sceneMemberID="viewController">
+                <viewController title="Images" id="frb-PO-Z7O" customClass="ImageJokesViewController" customModule="iKid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyq-wG-h4y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="xha-50-Tb1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="ABr-6X-hPD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dwc-ET-Hxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,6 +93,7 @@
                         <segue destination="jDW-9q-QV4" kind="relationship" relationship="viewControllers" id="afO-cS-4je"/>
                         <segue destination="K8l-tU-pMH" kind="relationship" relationship="viewControllers" id="YxM-2T-rEJ"/>
                         <segue destination="amk-X5-xa8" kind="relationship" relationship="viewControllers" id="9KS-83-EK8"/>
+                        <segue destination="frb-PO-Z7O" kind="relationship" relationship="viewControllers" id="iNj-Et-Ksg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCP-il-CKt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
